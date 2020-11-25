@@ -45,13 +45,18 @@ export default Vue.extend({
   },
   methods: {
     handleLogin() {
-      ;(this.$refs.loginFormRef as any).validate((valid: boolean) => {
+      (this.$refs.loginFormRef as any).validate((valid: boolean) => {
         if (!valid) {
           return false
         }
 
         console.info('==handleLogin==', this.formData)
-        this.$router.push('/task-list')
+        // this.$router.push('/task-list')
+        // @ts-ignore
+        this.$bus.$emit('router_change', {
+          action: 'push',
+          path: '/task-list'
+        })
       })
     },
   },

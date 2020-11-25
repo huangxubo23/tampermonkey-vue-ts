@@ -18,7 +18,11 @@ export default {
   },
   methods: {
     handleHome() {
-      this.$router.push('/login')
+      // this.$router.push('/login')
+      this.$bus.$emit('router_change', {
+        action: 'push',
+        path: '/login'
+      })
     }
   }
 }

@@ -38,10 +38,11 @@
 
 <script>
 import Header from '@/components/Header.vue'
+import RouterView from '@/components/RouterView.vue'
 
 export default {
   name: 'Card',
-  components: { Header },
+  components: { Header, RouterView },
   data() {
     return {
       isHide: true,
