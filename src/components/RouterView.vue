@@ -24,6 +24,7 @@ export default Vue.extend({
   },
   computed: {
     currentRoute(): string {
+      console.info('==routers==', this.routers)
       return this.routers[this.routers.length - 1]
     }
   },

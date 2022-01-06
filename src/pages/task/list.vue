@@ -22,7 +22,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import { Notification } from 'element-ui'
 import { setValue, getValue, deleteValue, addValueChangeListener, removeValueChangeListener, openInTab, notification, getGMCookie } from '@/utils'
-import { getCookies, getCookie } from '@/utils/cookie'
+import { getCookie } from '@/utils/cookie'
 import { addRequestListener } from '@/utils/request'
 import { isDev } from '@/config'
 export default Vue.extend({
@@ -35,7 +35,6 @@ export default Vue.extend({
   methods: {
     async getCookie() {
       try {
-        const url = location.origin
         const cookies = await getCookie('BAIDUID')
         console.info('==cookies==', cookies)
       } catch (error) {
